@@ -1,0 +1,97 @@
+---
+
+const props = Astro.props;
+
+let text = "contacto@oriolfontcuberta.com";
+    const copyContent = async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        console.log('Content copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    }
+    
+---
+
+
+
+<header class="header">
+    <h1>Oriol Fontcuberta</h1>
+    <section>
+        <div id="email">
+            <input id="emailInput" type="email" value="contacto@oriolfontcuberta.com" readonly>
+            <button class="btn" onclick="copyContent()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <g fill="none" stroke="currentColor">
+                        <path d="M15 3H9a4 4 0 0 0-4 4v8" />
+                        <path d="M8.5 11.5c0-1.184 0-2.03.074-2.684c.073-.643.21-1.035.443-1.338a2.5 2.5 0 0 1 .461-.461c.303-.232.696-.37 1.338-.443c.653-.073 1.5-.074 2.684-.074c1.184 0 2.03 0 2.684.074c.642.073 1.035.21 1.338.443c.173.133.328.288.461.461c.232.303.37.695.443 1.338c.073.653.074 1.5.074 2.684v4c0 1.184 0 2.03-.074 2.684c-.073.642-.21 1.035-.443 1.338a2.502 2.502 0 0 1-.461.461c-.302.232-.695.37-1.338.443c-.653.073-1.5.074-2.684.074c-1.184 0-2.03 0-2.684-.074c-.643-.073-1.035-.21-1.338-.443a2.501 2.501 0 0 1-.461-.461c-.232-.302-.37-.695-.443-1.338c-.073-.653-.074-1.5-.074-2.684z" />
+                    </g>
+                </svg>
+            </button>
+            <button>
+                <a href="mailto:contacto@oriolfontcuberta.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                        <path fill="currentColor" d="M6.615 16.77q-.69 0-1.152-.463Q5 15.844 5 15.154v-9.77q0-.69.463-1.152t1.152-.463h13.77q.69 0 1.152.463q.463.462.463 1.153v9.769q0 .69-.462 1.153q-.463.462-1.153.462zm6.406-5.6L6 5.943v9.21q0 .27.173.442t.442.173h13.77q.269 0 .442-.173t.173-.442v-9.21l-7.021 5.225q-.217.162-.479.162t-.479-.162m.479-.857l7.308-5.427q-.058-.058-.125-.087q-.068-.029-.183-.029h-14q-.096 0-.192.048t-.154.106zm-9.885 9.457q-.69 0-1.152-.462Q2 18.844 2 18.154v-9q0-.214.143-.357q.144-.143.357-.143t.357.143t.143.357v9q0 .27.173.442t.442.173h14.27q.213 0 .356.144t.144.356q0 .214-.144.357t-.356.143zM21 5.927q0-.277-.067-.55q-.068-.273-.125-.492q-.058-.058-.125-.087q-.068-.029-.183-.029h-14q-.096 0-.192.048t-.154.106q-.058.22-.106.483Q6 5.669 6 5.926V4.77h15z" />
+                    </svg>
+                </a>
+            </button>
+        </div>
+    </section>
+</header>
+
+<script>
+
+  </script>
+
+<style>
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50vw;
+        height: 100vh;
+        color: white;
+        letter-spacing: -0.025rem;
+    }
+
+    h1{
+        font-size: 86px;
+        font-weight: 700;
+    }
+
+    #email{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input{
+        text-align: center;
+        width: 300px;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: none;
+        color: #9b9b9b;
+    }
+
+    #email svg{
+        background-color:rgb(0, 106, 255);
+        border-radius: 100%;
+        padding: 6px;
+        margin-left: 15px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    #email svg:hover{
+        background-color: white;
+        color: rgb(0, 106, 255);
+        transition: .3s;
+    }
+</style>
