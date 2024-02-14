@@ -1,27 +1,17 @@
 ---
 
 const props = Astro.props;
+const correoElectronico = "contacto@oriolfontcuberta.com";
 
-let text = "contacto@oriolfontcuberta.com";
-    const copyContent = async () => {
-      try {
-        await navigator.clipboard.writeText(text);
-        console.log('Content copied to clipboard');
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-      }
-    }
-    
 ---
 
-
-
 <header class="header">
-    <h1>Oriol Fontcuberta</h1>
-    <section>
+    <h1 id="title">Oriol <strong>Fontcuberta</strong></h1>
+    <p>Hey, me llamo Oriol y soy un apasionado del <strong>Desarrollo de Software</strong>, con ganas de involucrarme con tecnologías innovadoras y contribuir a proyectos dinámicos. 👨‍💻</p>
+    <main>
         <div id="email">
-            <input id="emailInput" type="email" value="contacto@oriolfontcuberta.com" readonly>
-            <button class="btn" onclick="copyContent()">
+            <input id="emailInput" type="email" value={correoElectronico} readonly>
+            <button class="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
                     <g fill="none" stroke="currentColor">
                         <path d="M15 3H9a4 4 0 0 0-4 4v8" />
@@ -30,19 +20,50 @@ let text = "contacto@oriolfontcuberta.com";
                 </svg>
             </button>
             <button>
-                <a href="mailto:contacto@oriolfontcuberta.com">
+                <a href=`mailto:${correoElectronico}`>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
                         <path fill="currentColor" d="M6.615 16.77q-.69 0-1.152-.463Q5 15.844 5 15.154v-9.77q0-.69.463-1.152t1.152-.463h13.77q.69 0 1.152.463q.463.462.463 1.153v9.769q0 .69-.462 1.153q-.463.462-1.153.462zm6.406-5.6L6 5.943v9.21q0 .27.173.442t.442.173h13.77q.269 0 .442-.173t.173-.442v-9.21l-7.021 5.225q-.217.162-.479.162t-.479-.162m.479-.857l7.308-5.427q-.058-.058-.125-.087q-.068-.029-.183-.029h-14q-.096 0-.192.048t-.154.106zm-9.885 9.457q-.69 0-1.152-.462Q2 18.844 2 18.154v-9q0-.214.143-.357q.144-.143.357-.143t.357.143t.143.357v9q0 .27.173.442t.442.173h14.27q.213 0 .356.144t.144.356q0 .214-.144.357t-.356.143zM21 5.927q0-.277-.067-.55q-.068-.273-.125-.492q-.058-.058-.125-.087q-.068-.029-.183-.029h-14q-.096 0-.192.048t-.154.106q-.058.22-.106.483Q6 5.669 6 5.926V4.77h15z" />
                     </svg>
                 </a>
             </button>
         </div>
-    </section>
+        <section id="socialButtonLinks">
+                <a class="linkedinButton" id="socialButtonLink linkedInButton"href="https://www.linkedin.com/in/oriolfontcuberta" target="_blank">
+                    <div id="socialButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                <path fill="currentColor" d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zM8 10a1 1 0 0 0-1 1v5a1 1 0 1 0 2 0v-5a1 1 0 0 0-1-1m3-1a1 1 0 0 0-1 1v6a1 1 0 1 0 2 0v-3.66c.305-.344.82-.748 1.393-.993c.333-.142.834-.2 1.182-.09a.55.55 0 0 1 .293.188c.052.07.132.226.132.555v4a1 1 0 0 0 2 0v-4c0-.67-.17-1.266-.524-1.744a2.54 2.54 0 0 0-1.301-.907c-.902-.283-1.901-.126-2.568.16a5.82 5.82 0 0 0-.623.312A1 1 0 0 0 11 9M8 7a1 1 0 1 0 0 2a1 1 0 0 0 0-2" />
+                            </g>
+                        </svg>
+                        LinkedIn
+                    </div>
+                </a>
+                <a class="githubButton" id="socialButtonLink githubButton" href="https://github.com/oriolfontcu" target="_blank">
+                    <div id="socialButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                            <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
+                        </svg>
+                        Github
+                    </div>
+                </a>
+        </section>
+    </main>
 </header>
 
 <script>
-
-  </script>
+    
+    const correoElectronico = "contacto@oriolfontcuberta.com"
+    const buttons = document.querySelectorAll('button.alert');
+   
+    // Maneja los clics en cada botón.
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            navigator.clipboard.writeText(correoElectronico);     
+        });
+    });
+   
+</script>
 
 <style>
 
@@ -63,6 +84,10 @@ let text = "contacto@oriolfontcuberta.com";
         font-weight: 700;
     }
 
+    #title strong{
+        font-weight: 700;
+    }
+
     #email{
         display: flex;
         flex-direction: row;
@@ -77,6 +102,10 @@ let text = "contacto@oriolfontcuberta.com";
         border-radius: 25px;
         border: none;
         color: #9b9b9b;
+    }
+
+    input:focus{
+        outline: none;
     }
 
     #email svg{
@@ -94,4 +123,66 @@ let text = "contacto@oriolfontcuberta.com";
         color: rgb(0, 106, 255);
         transition: .3s;
     }
+
+    p{
+        font-size: 20px;
+        color:#b6bac2;
+        font-weight: 500;
+        margin: 3vh 0vw 5vh;
+    }
+
+    p strong {
+        color: rgb(105, 168, 255);
+        font-weight: 500;
+    }
+
+    #socialButtonLinks{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 220px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    #socialButton{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100px;
+        padding: 5px;
+    }
+
+    .linkedinButton{
+        background-color: rgb(0, 106, 255);
+        border-radius: 10px;
+        border: 1px solid rgb(105, 168, 255);
+    }
+    
+    .githubButton{
+        background-color: #1e2837;
+        border-radius: 10px;
+        border: 1px solid #4b5462;
+    }
+
+    @media (max-width: 580px){
+        h1{
+            font-size: 20vw;
+        }
+        
+        #email{
+            display: none;
+        }
+
+        #socialButtonLinks{
+            margin-top: 20px;
+        }
+
+        #title strong{
+            display: none;
+        }
+
+    }
+
 </style>
