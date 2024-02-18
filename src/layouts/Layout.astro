@@ -19,18 +19,23 @@ import Header from '../components/Header.astro';
 	</head>
 	<body>
 		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Header />
-		<slot />
+			<Header />
+			<slot />
 	</body>
 </html>
 <style is:global>
 	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+	html{
+		font-family: "Inter", sans-serif;
+	}
+
 	body {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		font-family: "Inter", sans-serif;
+		background-color: rgb(10 10 10 / 1);
 	}
 
 </style>
